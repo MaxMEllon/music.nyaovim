@@ -1,0 +1,73 @@
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'></link>
+<dom-module id='mp3-player'>
+  <template>
+    <style>
+:host {
+  height: auto;
+  width: auto;
+}
+i {
+  font-size: x-large;
+  margin: 9px;
+}
+button.btn {
+  background: transparent;
+  border-bottom: 15px;
+  border: 0px;
+  color: white;
+  padding: 0px;
+}
+button.btn:hover {
+  color: #AAA;
+}
+button.btn:active {
+  color: gray;
+}
+#mp3-player-body {
+  background-color: #0091ea;
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  width: 40px;
+}
+.modal {
+  display: none;
+  font-family: Roboto Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 20px;
+  left: 10%;
+  padding: 20px;
+  position: absolute;
+  top: 3%;
+  width: 70%;
+}
+    </style>
+    <div id='mp3-player-body'>
+      <div id='mp3-player-close'>
+        <button class='mp3-player btn'>
+          <i class='fa fa-times'></i>
+        </button>
+      </div>
+      <div id='mp3-player-play'>
+        <button class='mp3-player btn'>
+          <i class='fa fa-play'></i>
+        </button>
+      </div>
+      <div id='mp3-player-stop'>
+        <button class='mp3-player btn'>
+          <i class='fa fa-stop'></i>
+        </button>
+      </div>
+      <div id='mp3-player-next'>
+        <button class='mp3-player btn'>
+          <i class='fa fa-fast-forward'></i>
+        </button>
+      </div>
+      <div id='mp3-player-prev'>
+        <button class='mp3-player btn'>
+          <i class='fa fa-fast-backward'></i>
+        </button>
+      </div>
+    </div>
+  </template>
+</dom-module>
+<script src='./mp3-player.js'></script>
