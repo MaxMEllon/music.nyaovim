@@ -1,11 +1,11 @@
-# nyaovim-music
+# music.nyaovim
 
 ![](./demo/ss.gif)
 
 ## Installation
 
 ```
-Plug 'MaxMellon/nyaovim-music'
+Plug 'MaxMellon/music.nyaovim'
 ```
 
 ## Usege
