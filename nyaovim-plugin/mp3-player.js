@@ -112,9 +112,8 @@
           let music = this.playlist[this.playingIndex];
           this.showModal();
           this.playing = childProcess.spawn("afplay", [music, '-v', '0.05']);
-          this.playing.on('close', (result, signal) => {
-            if (result === 0) this.next();
-          });
+          this.playing.once('close', (result, signal) => this.next);
+          this.playing.once('disconnect', () => this.stop);
           resolve(music);
         } catch (err) {
           console.error(err);
@@ -130,6 +129,7 @@
     stop() {
       if (this.playing) {
         this.playing.removeListener('close', this.play);
+        this.playing.removeListener('disconnect', this.stop);
         this.playing.kill('SIGTERM');
       }
     },
